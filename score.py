@@ -2,6 +2,7 @@ from turtle import Turtle
 
 from design import Design
 
+
 class Score(Turtle):
     def __init__(self):
         super().__init__()
@@ -14,5 +15,6 @@ class Score(Turtle):
     def update_score(self):
         self.score += 1
         self.clear()
-        self.write(self.score)
 
+    def write_score(self):
+        self.write(f"Score: {self.score}", align=Design.align, font=Design.font)

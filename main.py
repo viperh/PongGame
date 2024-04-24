@@ -27,7 +27,6 @@ screen.onkeypress(right_paddle.move_down, "Down")
 screen.onkeypress(left_paddle.move_up, "w")
 screen.onkeypress(left_paddle.move_down, "s")
 
-
 game_is_on = True
 
 Design.draw_middle_line()
@@ -39,8 +38,8 @@ while game_is_on:
     if ball.ycor() > Design.screen_height // 2 - 20 or ball.ycor() < Design.screen_height // -2 + 20:
         ball.bounce_y()
 
-    if ball.distance(right_paddle) < 50 and ball.xcor() > Design.screen_width // 2 - 40 or ball.distance(left_paddle) < 50 and ball.xcor() < Design.screen_width // -2 + 40:
+    if ball.distance(right_paddle) < 50 and ball.xcor() > Design.screen_width // 2 - 40 or ball.distance(
+            left_paddle) < 50 and ball.xcor() < Design.screen_width // -2 + 40:
         ball.bounce_x()
 
 screen.exitonclick()
-
