@@ -36,5 +36,11 @@ while game_is_on:
     screen.update()
     ball.move()
 
+    if ball.ycor() > Design.screen_height // 2 - 20 or ball.ycor() < Design.screen_height // -2 + 20:
+        ball.bounce_y()
+
+    if ball.distance(right_paddle) < 50 and ball.xcor() > Design.screen_width // 2 - 40 or ball.distance(left_paddle) < 50 and ball.xcor() < Design.screen_width // -2 + 40:
+        ball.bounce_x()
 
 screen.exitonclick()
+

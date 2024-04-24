@@ -11,25 +11,18 @@ class Ball(Turtle):
         self.penup()
         self.x_pos = 0
         self.y_pos = 0
-        self.vert_dir = True
-        self.hor_dir = True
+        self.speed = 10
+        self.move_vert = self.speed
+        self.move_hor = self.speed
 
     def move(self):
-
-        if self.vert_dir:
-            self.y_pos += 10
-        else:
-            self.y_pos -= 10
-
-        if self.hor_dir:
-            self.x_pos += 10
-        else:
-            self.x_pos -= 10
-
-
-
+        self.y_pos += self.move_vert
+        self.x_pos += self.move_hor
         self.goto(self.x_pos, self.y_pos)
         sleep(0.1)
 
-    def change_direction_(self):
-        self.ascending = not self.ascending
+    def bounce_y(self):
+        self.move_vert *= -1
+
+    def bounce_x(self):
+        self.move_hor *= -1
